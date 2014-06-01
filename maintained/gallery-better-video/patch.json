@@ -1,0 +1,8 @@
+{
+    "name": "Better video controls",
+    "description": "Patches the default behaviour of Gallery video player. Now, when showing video seek-bar and controls, the video is not paused. Tap a second time to minimize the video and access to share options.",
+    "category": "gallery",
+    "infos": {
+        "maintainer": "Lucien Xu"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Vibrate when connected",
+    "description": "Vibrates when the connection is established.",
+    "category": "phone",
+    "infos": {
+        "maintainer": "Lucien Xu"
+    }
+}

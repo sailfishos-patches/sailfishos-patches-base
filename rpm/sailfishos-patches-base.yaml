@@ -1,0 +1,20 @@
+Name: sailfishos-patches-base
+Summary: A set of small and well-maintained patches
+Version: 0.0
+Release: 1
+Group: Qt/Qt
+URL: https://github.com/sailfishos-patches/sailfishos-patches-base
+License: TODO
+Sources:
+- '%{name}-%{version}.tar.bz2'
+Description: |
+  This package contains a set of patches that should 
+  not cause much harm on the device. 
+Configure: none
+Builder: none
+PkgConfigBR: []
+PkgBR: []
+Requires:
+- patchmanager
+Files:
+- '%{_datadir}/patchmanager/base-*'
