@@ -42,9 +42,9 @@ not cause much harm on the device.
 %install
 rm -rf %{buildroot}
 # >> install pre
-mkdir -p %{buildroot}/usr/share/patchmanager
+mkdir -p %{buildroot}/usr/share/patchmanager/patches
 for f in $(ls maintained); do
-cp -r maintained/$f %{buildroot}/usr/share/patchmanager/base-$f
+cp -r maintained/$f %{buildroot}/usr/share/patchmanager/patches/base-$f
 done
 # << install pre
 
@@ -53,6 +53,6 @@ done
 
 %files
 %defattr(-,root,root,-)
-%{_datadir}/patchmanager/base-*
+%{_datadir}/patchmanager/patches/base-*
 # >> files
 # << files
