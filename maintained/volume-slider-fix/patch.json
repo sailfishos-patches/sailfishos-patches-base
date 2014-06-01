@@ -1,0 +1,8 @@
+{
+    "name": "Volume slider fix for Pandora",
+    "description": "A patch to settings that allows the volume slider to render correctly when embedded inside a Pandora based control center.",
+    "category": "settings",
+    "infos": {
+        "maintainer": "Lucien Xu"
+    }
+}
