@@ -16,5 +16,7 @@ PkgConfigBR: []
 PkgBR: []
 Requires:
 - patchmanager
+Obsoletes:
+- patchmanager-volume-warning
 Files:
 - '%{_datadir}/patchmanager/patches/base-*'

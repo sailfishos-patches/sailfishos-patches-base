@@ -1,0 +1,8 @@
+{
+    "name": "Disable volume warning",
+    "description": "A patch that disables the audio level warning required by EU legislature.",
+    "category": "system",
+    "infos": {
+        "maintainer": "Jakub Kozisek"
+    }
+} 
