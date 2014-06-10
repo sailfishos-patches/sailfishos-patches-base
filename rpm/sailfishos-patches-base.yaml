@@ -18,5 +18,6 @@ Requires:
 - patchmanager
 Obsoletes:
 - patchmanager-volume-warning
+- roboro-better-calllog
 Files:
 - '%{_datadir}/patchmanager/patches/base-*'
