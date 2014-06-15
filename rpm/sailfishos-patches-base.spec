@@ -18,6 +18,8 @@ URL:        https://github.com/sailfishos-patches/sailfishos-patches-base
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  sailfishos-patches-base.yaml
 Requires:   patchmanager
+Obsoletes:   patchmanager-volume-warning
+Obsoletes:   roboro-better-calllog
 
 %description
 This package contains a set of patches that should 
