@@ -1,23 +1,23 @@
-diff -rupN original/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml patched/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml
---- original/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml	2014-06-10 10:03:30.000000000 +0100
-+++ patched/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml	2014-06-10 10:57:58.985277433 +0100
-@@ -61,6 +61,11 @@ ListItem {
+--- original/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml	2014-07-15 16:55:06.651256201 +0100
++++ patched/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml	2014-07-16 11:19:16.382777301 +0100
+@@ -63,9 +63,12 @@ ListItem {
          height: firstNameText.height
          baselineOffset: firstNameText.baselineOffset
          Row {
 +            id: nameRow
 +            spacing: Theme.paddingSmall
-+            width: parent.width - (timeStampLabel.visible ? timeStampLabel.width + Theme.paddingMedium : 0)
-+
-+            Row{
++            width: parent.width - (timeStampLabel.visible ? timeStampLabel.width + Theme.paddingMedium : 0) - nameRightPadding
++            Row {
              spacing: Theme.paddingSmall
-             width: parent.width - (timeStampLabel.visible ? timeStampLabel.width + Theme.paddingMedium : 0)
- 
-@@ -84,6 +89,23 @@ ListItem {
-                 width: Math.min(implicitWidth, parent.width - firstNameText.width)
+             width: parent.width - (timeStampLabel.visible ? timeStampLabel.width + Theme.paddingMedium : 0) - nameRightPadding
+-
+             Label {
+                 id: firstNameText
+                 opacity: privateNumber ? 0.5 : 1.0
+@@ -87,6 +90,23 @@ ListItem {
                  visible: width > 0
              }
-+            }
+         }
 +            Row {
 +                spacing: Theme.paddingSmall
 +                width: parent.width - (timeStampLabel.visible ? timeStampLabel.width + Theme.paddingMedium : 0)
@@ -27,13 +27,14 @@ diff -rupN original/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.q
 +                    id: phoneNumber
 +                    anchors.left: parent.left
 +                    opacity: privateNumber ? 0.5 : 1.0
-+                    text: main.formatNumber(remoteUid)
++                    text: CallLog.formatNumber(remoteUid)
 +                    color: highlighted ? Theme.secondaryHighlightColor : secondaryColor
 +                    font.pixelSize: Theme.fontSizeExtraSmall
 +                    truncationMode: TruncationMode.Fade
 +                    width: Math.min(implicitWidth, parent.width)
 +                }
 +            }
-         }
++        }
          Label {
              id: timeStampLabel
+             text: Format.formatDate(time, Formatter.TimepointRelativeCurrentDay)
