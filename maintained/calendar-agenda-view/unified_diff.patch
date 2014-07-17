@@ -1,0 +1,16 @@
+--- /usr/share/jolla-calendar/pages/MonthPage.qml       2014-07-17 16:49:07.140009678 +0200
++++ /usr/share/jolla-calendar/pages/MonthPage.qml       2014-07-17 16:54:29.774284021 +0200
+@@ -48,13 +48,11 @@
+                 text: qsTrId("calendar-me-go_to_today")
+                 onClicked: datePicker.date = new Date()
+             }
+-            /* Disabled for now
+             MenuItem {
+                 //% "Show agenda"
+                 text: qsTrId("calendar-me-show_agenda")
+                 onClicked: pageStack.push("AgendaPage.qml", {date: datePicker.date})
+             }
+-            */
+             MenuItem {
+                 //% "New event"
+                 text: qsTrId("calendar-me-new_event")
