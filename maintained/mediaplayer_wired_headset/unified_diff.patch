@@ -1,0 +1,33 @@
+--- /usr/lib/qt5/qml/com/jolla/mediaplayer/AudioPlayer.qml	2014-07-15 09:23:52.050048765 +0200
++++ /usr/lib/qt5/qml/com/jolla/mediaplayer/AudioPlayer.qml	2014-07-15 09:27:49.771295385 +0200
+@@ -125,6 +125,10 @@
+         audio.model.appendUrl(url)
+         playIndex(0)
+     }
++    function toggleOrNext(){
++	toggleTimer.start()
++	toggle()
++    }
+ 
+     function toggle() {
+         if (playing) {
+@@ -186,13 +190,15 @@
+     onPositionChanged: if (!slider.pressed) slider.value = position / 1000
+ 
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaTogglePlayPause; onPressed: player.toggle() }
+-    MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPlay; onPressed: player._play() }
+-    MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPause; onPressed: player.pause() }
++    MediaKey { 
++	enabled: player._grabKeys; key: Qt.Key_MediaPlay; onPressed: player._play()
++    }
++    MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPause; onPressed: player.pause()}
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaStop; onPressed: audio.stop() }
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaNext; onPressed: audio.playNext() }
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPrevious; onPressed: audio.playPrevious() }
+-    MediaKey { enabled: player._grabKeys; key: Qt.Key_ToggleCallHangup; onPressed: player.toggle() }
+-
++    MediaKey { enabled: player._grabKeys; key: Qt.Key_ToggleCallHangup; onPressed: player.toggleOrNext(); onReleased: toggleTimer.stop() }
++    Timer { id: toggleTimer; interval: 500; onTriggered: audio.playNext()}
+     MediaKey {
+         id: forwardKey
+ 
