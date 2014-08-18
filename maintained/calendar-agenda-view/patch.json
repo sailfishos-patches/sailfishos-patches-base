@@ -1,0 +1,8 @@
+{
+    "name": "Calendar agenda view",
+    "description": "Adds an agenda view to the calendar application",
+    "category": "calendar",
+    "infos": {
+        "maintainer": "Jonas Karlsson"
+    }
+}
