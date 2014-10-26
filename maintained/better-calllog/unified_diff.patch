@@ -1,5 +1,5 @@
---- original/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml	2014-07-15 16:55:06.651256201 +0100
-+++ patched/usr/share/voicecall-ui-jolla/qml/pages/calllog/CallLogItem.qml	2014-07-16 11:19:16.382777301 +0100
+--- original/usr/share/voicecall-ui-jolla/pages/calllog/CallLogItem.qml	2014-07-15 16:55:06.651256201 +0100
++++ patched/usr/share/voicecall-ui-jolla/pages/calllog/CallLogItem.qml	2014-07-16 11:19:16.382777301 +0100
 @@ -63,9 +63,12 @@ ListItem {
          height: firstNameText.height
          baselineOffset: firstNameText.baselineOffset
