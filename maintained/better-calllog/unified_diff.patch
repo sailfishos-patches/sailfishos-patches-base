@@ -1,6 +1,6 @@
 --- original/usr/share/voicecall-ui-jolla/pages/calllog/CallLogItem.qml	2014-07-15 16:55:06.651256201 +0100
 +++ patched/usr/share/voicecall-ui-jolla/pages/calllog/CallLogItem.qml	2014-07-16 11:19:16.382777301 +0100
-@@ -63,9 +63,12 @@ ListItem {
+@@ -58,9 +58,12 @@ ListItem {
          height: firstNameText.height
          baselineOffset: firstNameText.baselineOffset
          Row {
@@ -14,7 +14,7 @@
              Label {
                  id: firstNameText
                  opacity: privateNumber ? 0.5 : 1.0
-@@ -87,6 +90,23 @@ ListItem {
+@@ -82,5 +85,23 @@ ListItem {
                  visible: width > 0
              }
          }

@@ -1,6 +1,6 @@
 --- original/usr/share/jolla-gallery/pages/FlickableImageView.qml	2014-03-25 11:29:15.000000000 +0100
 +++ patched/usr/share/jolla-gallery/pages/FlickableImageView.qml	2014-03-25 12:43:29.344398797 +0100
-@@ -161,11 +161,11 @@
+@@ -176,11 +176,11 @@
                  duration: model.duration
  
                  onClicked: {
@@ -27,7 +27,7 @@
      id: videoItem
  
      property MediaPlayer player
-@@ -20,6 +20,7 @@
+@@ -22,6 +22,7 @@
                  && videoItem.player
                  && videoItem.player.status >= MediaPlayer.Loaded
                  && videoItem.player.status < MediaPlayer.EndOfMedia
@@ -35,7 +35,7 @@
  
      implicitWidth: poster.implicitWidth
      implicitHeight: poster.implicitHeight
-@@ -27,7 +28,11 @@
+@@ -29,7 +30,11 @@
      Connections {
          target: videoItem._loaded ? videoItem.player : null
  
@@ -45,10 +45,10 @@
 +                positionSlider.value = videoItem.player.position / 1000
 +            }
 +        }
-         onDurationChanged: positionSlider.maximumValue = videoItem.player.duration / 1000
      }
  
-@@ -36,7 +41,25 @@
+     onActiveChanged: {
+@@ -37,7 +42,25 @@
              positionSlider.value = 0
          }
      }
@@ -75,7 +75,7 @@
      // Poster
      Thumbnail {
          id: poster
-@@ -55,26 +78,36 @@
+@@ -56,26 +79,36 @@
  
          priority: Thumbnail.HighPriority
          fillMode: Thumbnail.PreserveAspectFit
@@ -117,7 +117,7 @@
                      + (mouseArea.down ? Theme.highlightColor : Theme.primaryColor)
  
              MouseArea {
-@@ -82,10 +115,18 @@
+@@ -83,10 +116,18 @@
  
                  property bool down: pressed && containsMouse
                  anchors.fill: parent
@@ -139,7 +139,7 @@
                  }
              }
          }
-@@ -95,7 +136,7 @@
+@@ -96,7 +137,7 @@
  
              anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
  
@@ -148,7 +148,7 @@
              height: Theme.itemSizeExtraLarge
              handleVisible: false
              minimumValue: 0
-@@ -103,13 +144,16 @@
+@@ -106,13 +147,16 @@
                          ? Format.DurationLong
                          : Format.DurationShort)
  
