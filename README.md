@@ -2,8 +2,6 @@
 
 This repository contains a set of patches that should not cause much harm on the device. 
 
-## Patches were updated to work on Sailfish OS 1.1.0.x (Jolla update 9)
-
 ## List of patches
 
 TODO
