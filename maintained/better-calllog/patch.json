@@ -1,7 +1,7 @@
 {
     "name": "Better Call-Log",
     "description": "Patches the default behaviour of the voicecall-ui to show phone numbers in the calllog",
-    "category": "other",
+    "category": "phone",
     "infos": {
         "maintainer": "goroboro"
     }

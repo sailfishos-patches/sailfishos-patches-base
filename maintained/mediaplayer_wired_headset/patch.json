@@ -1,7 +1,7 @@
 {
     "name": "Play/pause music with one-button headsets",
     "description": "A patch to mediaplayer that changes behaviour of one-button headsets: Short press pauses music, long press plays the next song.",
-    "category": "mediaplayer",
+    "category": "media",
     "infos": {
         "maintainer": "ghowa"
     }
