@@ -1,6 +1,6 @@
---- /usr/lib/qt5/qml/com/jolla/mediaplayer/AudioPlayer.qml	2014-07-15 09:23:52.050048765 +0200
-+++ /usr/lib/qt5/qml/com/jolla/mediaplayer/AudioPlayer.qml	2014-07-15 09:27:49.771295385 +0200
-@@ -125,6 +125,10 @@
+--- /usr/lib/qt5/qml/com/jolla/mediaplayer/AudioPlayer.qml	2000-01-01 01:00:00.000000000 +0100
++++ /usr/lib/qt5/qml/com/jolla/mediaplayer/AudioPlayer.qml	2015-06-09 07:46:21.975996782 +0200
+@@ -127,6 +127,10 @@
          audio.model.appendUrl(url)
          playIndex(0)
      }
@@ -11,23 +11,13 @@
  
      function toggle() {
          if (playing) {
-@@ -186,13 +190,15 @@
-     onPositionChanged: if (!slider.pressed) slider.value = position / 1000
- 
-     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaTogglePlayPause; onPressed: player.toggle() }
--    MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPlay; onPressed: player._play() }
--    MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPause; onPressed: player.pause() }
-+    MediaKey { 
-+	enabled: player._grabKeys; key: Qt.Key_MediaPlay; onPressed: player._play()
-+    }
-+    MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPause; onPressed: player.pause()}
-     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaStop; onPressed: audio.stop() }
-     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaNext; onPressed: audio.playNext() }
-     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPrevious; onPressed: audio.playPrevious() }
--    MediaKey { enabled: player._grabKeys; key: Qt.Key_ToggleCallHangup; onPressed: player.toggle() }
--
+@@ -194,7 +198,8 @@
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaStop; onReleased: audio.stop() }
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaNext; onReleased: audio.playNext() }
+     MediaKey { enabled: player._grabKeys; key: Qt.Key_MediaPrevious; onReleased: audio.playPrevious() }
+-    MediaKey { enabled: player._grabKeys; key: Qt.Key_ToggleCallHangup; onReleased: player.toggle() }
 +    MediaKey { enabled: player._grabKeys; key: Qt.Key_ToggleCallHangup; onPressed: player.toggleOrNext(); onReleased: toggleTimer.stop() }
-+    Timer { id: toggleTimer; interval: 500; onTriggered: audio.playNext()}
++    Timer { id: toggleTimer; interval: 400; onTriggered: audio.playNext()}
+ 
      MediaKey {
          id: forwardKey
- 
